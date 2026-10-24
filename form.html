@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span>KasirKu</span>
+        <span class="status-badge">Toko Berkah Warung - Buka</span>
+      </div>
+      <nav class="main-nav">
+        <a href="">Kasir Transaksi</a>
+        <a href="">Daftar Produk</a>
+        <a href="" class="active">Tambah Produk</a>
+      </nav>
+      <div class="nav-user">
+        <div class="user-profile">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGdJ0jz0CUp_k0sh0Vro-ZDczSZ72lOTSzImbJZLIWkLCyspW7QyY0us1gg6PVJrtKeEH9&s"
+            class="user-avatar"
+            alt=""
+          />
+          <div>
+            <strong>Mbak Sri (Kasir)</strong>
+            <small style="color: #64748b">Admin & Kasir</small>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="page-header">
+        <div>
+          <div class="sub-breadcrumb">Daftar Produk / TAMBAH PRODUK BARU</div>
+          <h1>Formulir Tambah Produk Warung</h1>
+          <p style="color: #64748b">
+            Lengkapi data barang dengan teliti, agar margin keuntungan terhitung
+            akurat.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <form action="" method="post">
+          <div
+            style="
+              background: white;
+              padding: 20px;
+              border-radius: 12px;
+              border: 1px solid #e2e8f0;
+              margin-bottom: 20px;
+            "
+          >
+            <h3 style="margin-bottom: 16px">1.Informasi Pokok Barang</h3>
+            <div>
+              <label for="">Nama Produk Warung</label>
+              <input type="text" />
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                margin-bottom: 16px;
+              "
+            >
+              <div>
+                <label for="">Kategori Produk</label>
+                <select name="" id="">
+                  <option value="">Sembako (Minyak, Beras, Gula)</option>
+                </select>
+              </div>
+              <div>
+                <label for="">Satuan Eceran</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div>
+              <label for="">Kode Barang /SKU (Opsional)</label>
+              <input type="text" />
+            </div>
+          </div>
+
+          <!-- SESI KE 2 -->
+          <div
+            style="
+              background: white;
+              padding: 20px;
+              border-radius: 12px;
+              border: 1px solid#e2e8f0;
+              margin-bottom: 20px;
+            "
+          >
+            <h3 style="margin-bottom: 16px">2.Harga dan margin laba</h3>
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px"
+            >
+              <div>
+                <label for="">Harga Modal / Beli (Rp)</label>
+                <input type="number" />
+              </div>
+              <div>
+                <label for="">Harga Jual Kasir (Rp)</label>
+                <input type="number" />
+              </div>
+            </div>
+            <div>
+              <div></div>
+              <div>
+                <label for="">Satuan Eceran</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div>
+              <label for="">Kode Barang /SKU (Opsional)</label>
+              <input type="text" />
+            </div>
+          </div>
+          <!-- SESI KE 3 -->
+          <div
+            style="
+              background: white;
+              padding: 20px;
+              border-radius: 12px;
+              border: #e2e8f0;
+              margin-bottom: 20px;
+            "
+          >
+            <h3 style="margin-bottom: 16px">3.Manajemen Stock & Peringatan</h3>
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px"
+            >
+              <div>
+                <label for="">Jumlah Stock Awal Saat ini</label>
+                <input type="number" />
+              </div>
+              <div>
+                <label for="">Batas Minimum Stock</label>
+                <input type="number" />
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 12px">
+            <button type="submit" class="btn-secondary">Batal</button>
+            <button type="submit" class="btn-primary">Simpan</button>
+          </div>
+        </form>
+
+        <div>
+          <div
+            style="
+              background: white;
+              padding: 20px;
+              border-radius: 12px;
+              border: 1px solid #e2e8f0;
+            "
+          >
+            <h3 style="margin-bottom: 12px">Pratinjau Live Kartu Kasir</h3>
+            <div style="margin-bottom: 16px" class="product-card">
+              <span class="stock-tag">Stock: 34 Botol</span>
+              <img
+                src="data:image/jpeg;base64,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"
+                width="250"
+              />
+              <div class="product-card-body">
+                <small style="color: #64748b">Sembako</small>
+                <div style="font-weight: 700; font-size: 16px">
+                  Minyak Goreng Sania 2 Liter
+                </div>
+                <div style="font-size: 16px; font-weight: 800; margin-top: 8px">
+                  Rp. 37.000
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>Kasirku(Kilat Retail UMKM)</div>
+    </footer>
+  </body>
+</html>
