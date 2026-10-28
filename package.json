@@ -1,0 +1,23 @@
+{
+  "name": "kasirku",
+  "version": "1.0.0",
+  "description": "LINK GITHUB PAGE : https://anitawidyastuty1-ops.github.io/kasirku/",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev" :"node --watch src/index.js",
+    "test": "echo \"error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anitawidyastuty1-ops/kasirku.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/anitawidyastuty1-ops/kasirku/issues"
+  },
+  "homepage": "https://github.com/anitawidyastuty1-ops/kasirku#readme"
+}
