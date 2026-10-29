@@ -1,71 +1,63 @@
-// Data laporan toko
-const laporan = {
-  namaToko: "Toko Berkah Warung (Kasir+)",
-  kasir: "Mbak Sri",
-  produk: [
-    {
-      nama: "Minyak Goreng Sania 2L",
-      hargaJual: 37000,
-      margin: 4000,
-      stokGudang: 10,
-      ambangBatas: 5
-    },
-    {
-      nama: "Beras Ramos 5kg",
-      hargaJual: 72000,
-      margin: 7000,
-      stokGudang: 15,
-      ambangBatas: 5
-    },
-    {
-      nama: "Gula Pasir 1kg",
-      hargaJual: 16000,
-      margin: 2000,
-      stokGudang: 3,
-      ambangBatas: 5
+
+
+
+// // Jalankan fungsi
+// cetakLaporan(laporan);import { MenjalankanNode } from "./menjalankan_node.js";
+import * as readline from "node:readline/promises";
+import { stdin as input, stdout as output } from "node:process";
+ // console.log(MenjalankanNode());
+
+const rl = readline.createInterface({ input, output });
+ 
+const daftar = [{
+  nama: "Teh Celup", harga:5000
+},{
+  nama: "Coca-cola", harga:8000
+}];
+
+console.table(daftar);
+let pilihYa;
+do {
+    pilihYa = await rl.question("Pilih Menu :");
+    switch (pilihYa) {
+        case "1":
+        // TAMBAH
+        const nama = await rl.question("Nama Produk : ");
+        const harga =Number( await rl.question("Harga Produk : "));
+        daftar.push ({nama, harga});
+        console.log(`Berhasil Bertambah!`);
+        console.table(daftar);
+        break;
+        
+        let harga = 0
+        while (true) {
+          let hargaString = await rl.question("Nama Produk : ");
+          harga = Number(hargaString);
+          if (hargaString.trim() !== "" && !isNaN(harga) && harga> 0) {
+            break;
+          }
+          console.log(`Harga gagal ter input`);
+        }
+          daftar.push ({nama, harga});
+          console.log(`Berhasil Bertambah!`);
+          //console.table(daftar);
+          break; //
+        case "2":
+            // LIHAT
+            break;
+        case "3":
+            // CARI
+            break;
+        case "4":
+            // KELUAR
+            console.log(`Dah Lah....`);
+            break;
+        default:
+        console.log(`Pilihan tidak dikenali`);
+        break;
     }
-  ]
-};
+  } while (pilihYa  !== "4");
 
-// Fungsi format angka ke Rupiah
-function formatRupiah(angka) {
-  return "Rp " + angka.toLocaleString("id-ID");
-}
 
-function cetakLaporan(data) {
-  const garisPemisah = "==================================================";
-  const garisTitik = "--------------------------------------------------";
+         
 
-  console.log(`garisPemisah`);
-  console.log(`LAPORAN HARIAN POS: ${data.namaToko}`);
-  console.log(`Kasir Bertugas: ${data.kasir}`);
-  console.log(garisPemisah);
-
-  let totalEstimasiAset = 0;
-  let barangButuhPerhatian = 0;
-
-  data.produk.forEach((item) => {
-    // Penentuan status berdasarkan sisa stok
-    const perluRestock = item.stokGudang <= item.ambangBatas;
-    const status = perluRestock ? "⚠️ Perlu Restock" : "✔️ Aman";
-
-    if (perluRestock) {
-      barangButuhPerhatian++;
-    }
-
-    // Akumulasi nilai aset (stok * harga jual)
-    totalEstimasiAset += item.stokGudang * item.hargaJual;
-
-    console.log(`Produk      : ${item.nama}`);
-    console.log(`Harga Jual  : ${formatRupiah(item.hargaJual)} (Margin: ${formatRupiah(item.margin)})`);
-    console.log(`Stok Gudang : ${item.stokGudang} unit| Status: ${status}`);
-    console.log(`garisTitik`);
-  });
-
-  console.log(`Total Estimasi Aset Toko : ${formatRupiah(totalEstimasiAset)}`);
-  console.log(`Barang Butuh Perhatian   : ${barangButuhPerhatian} item`);
-  console.log(`garisPemisah`);
-}
-
-// Jalankan fungsi
-cetakLaporan(laporan);
